@@ -46,17 +46,19 @@ return resArr;
 function createTable(arr){
 
 const resArr = Array.from(Array(arr.length + 1), x => new Array(arr.length + 1));
-console.log(resArr);
+// console.log(resArr);
 
+resArr[0] = [" ", ...arr];
 
+for(let i = 1; i < resArr.length; i++){
+resArr[i][0] = resArr[0][i];
 
+  for(let j = 1; j < resArr[i].length; j++){
 
-
-
-
-
-
-
+    resArr[i][j] = (resArr[0][j] * resArr[i][0]);
+  } 
+};
+resArr.forEach((arr) => console.log(arr.join('|')));
 };
 
 
@@ -70,5 +72,4 @@ exports.primeTable = createPrimeTable;
 
 if (process.mainModule.filename === __filename){
   console.log(createTable([2,3,5,7,11,13]));
-  console.log(createPrimeTable(20));
 };
