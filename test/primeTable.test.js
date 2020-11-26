@@ -10,7 +10,7 @@ const primeTable = primeTableFuncs.primeTable;
 
 
 
-describe.only('check if number is a Prime', function () {
+describe.only('checkIfPrime', function () {
 
   it('should return true if given a prime number', function () {
     expect(prime(2)).be.true;
@@ -22,7 +22,9 @@ describe.only('check if number is a Prime', function () {
   });
 
   it('should only acccept positive integers', function () {
-
+    expect(()=> prime(-33)).to.throw(Error)
+    expect(()=> prime("bannana")).to.throw(Error)
+    expect(()=> prime(12.27)).to.throw(Error)
   });
 
 

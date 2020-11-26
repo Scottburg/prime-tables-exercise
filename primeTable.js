@@ -13,6 +13,8 @@ Prime list should work for 20,000+ Primes
 */
 
 function checkifPrime(num){
+if (num < 1 || !Number.isInteger(num)) {throw new Error("Only Positive Integers")}
+ 
 if (num === 2) {return true};
 if (num === 1 || num % 2 === 0) return false; 
 
