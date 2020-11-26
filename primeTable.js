@@ -1,15 +1,12 @@
 'use strict'
 
-/* TO DO -
-
-Create primeChecking function that returns True or false if prime 
-Create a function that outputs a list of the first N primes
+/* TO DO - s
 Create a function that takes an array of numbers and from this output a multiplication list to the console
 Create a function that puts all the functions together
 
 
 Consistent formatting on the table. 
-Prime list should work for 20,000+ Primes 
+
 */
 
 function checkifPrime(num){
@@ -46,7 +43,21 @@ return resArr;
 };
 
 
-function createTable(arr){};
+function createTable(arr){
+
+const resArr = Array.from(Array(arr.length + 1), x => new Array(arr.length + 1));
+console.log(resArr);
+
+
+
+
+
+
+
+
+
+
+};
 
 
 function createPrimeTable(n){};
@@ -56,3 +67,8 @@ exports.prime = checkifPrime;
 exports.primeList = createPrimeList;
 exports.table = createTable;
 exports.primeTable = createPrimeTable;
+
+if (process.mainModule.filename === __filename){
+  console.log(createTable([2,3,5,7,11,13]));
+  console.log(createPrimeTable(20));
+};

@@ -36,7 +36,6 @@ describe('create multiplication table', function () {
 
   });
 
-
 });
 
 describe('CreatePrimeList', function () {
