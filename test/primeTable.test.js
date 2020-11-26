@@ -1,6 +1,6 @@
 'use strict'
 
-const { expect, should  } = require('chai');
+const { expect } = require('chai');
 
 const primeTableFuncs = require('../Primetable.js');
 const prime = primeTableFuncs.prime;
@@ -31,10 +31,6 @@ describe('checkIfPrime', function () {
 
 });
 describe('create multiplication table', function () {
-
-  it('should output a table of X+1 * X+1', function () {
-    expect(false).be.true
-  });
 
   it('should only acccept an array', function () {
     expect(()=> table(-33)).to.throw(Error)
@@ -71,10 +67,6 @@ describe('CreatePrimeList', function () {
 });
 
 describe('Create prime multiplication table', function () {
-
-  it('should output a table of X+1 * X+1', function () {
-    expect(false).be.true
-  });
 
   it('should only acccept positive integers', function () {
     expect(()=> primeTable(-33)).to.throw(Error)

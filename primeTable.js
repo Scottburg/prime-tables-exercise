@@ -1,11 +1,5 @@
 'use strict'
 
-/* TO DO -
-
-Consistent formatting on the table. 
-
-*/
-
 function checkifPrime(num){
 if (num < 1 || !Number.isInteger(num)) {throw new Error("Only Positive Integers")}
  
@@ -22,7 +16,7 @@ for (let i = 3; i <= Math.sqrt(num); i += 2) {
 
 function createPrimeList(x){
 
-// if (x < 1 || !Number.isInteger(x)) {throw new Error("Only Positive Integers")}
+if (x < 1 || !Number.isInteger(x)) {throw new Error("Only Positive Integers")}
 const resArr = [2];
 let primePos = 1;
 let num = 1;
@@ -47,7 +41,7 @@ function createTable(arr){
   const maxDigits = ("" + (arr[arr.length-1] ** 2)).length;
   const resArr = Array.from(Array(arr.length + 1), x => new Array(arr.length + 1));
   const firstRow = arr.map(el => (""+el).padStart(maxDigits, " "));
-  // console.log(resArr);
+
 
   resArr[0] = [" ".padStart(maxDigits, " "), ...firstRow];
 
@@ -78,4 +72,5 @@ exports.primeTable = createPrimeTable;
 if (process.mainModule.filename === __filename){
       createPrimeTable(Number(process.argv[2]));
       createPrimeTable(5)
+
 };
