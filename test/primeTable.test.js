@@ -1,6 +1,6 @@
 'use strict'
 
-const { expect } = require('chai');
+const { expect, should  } = require('chai');
 
 const primeTableFuncs = require('../Primetable.js');
 const prime = primeTableFuncs.prime;
@@ -10,7 +10,7 @@ const primeTable = primeTableFuncs.primeTable;
 
 
 
-describe.only('checkIfPrime', function () {
+describe('checkIfPrime', function () {
 
   it('should return true if given a prime number', function () {
     expect(prime(2)).be.true;
@@ -39,17 +39,23 @@ describe('create multiplication table', function () {
 
 });
 
-describe('create list of first n primes', function () {
+describe.only('CreatePrimeList', function () {
 
   it('output should be an array of length n', function () {
+    expect(primeList(10)).to.have.lengthOf(10);
+    expect(primeList(1)).to.have.lengthOf(1);
+    expect(primeList(9999)).to.have.lengthOf(9999);
   });
 
   it('should be performant and able to handle more than 20,000 primes', function () {
+    expect(primeList(20000)).to.have.lengthOf(20000);
+    expect(() => primeList(20000)).to.not.throw();
   });
 
-  it('all numbers in the array should be prime', function () {
+  it('should be highly performant and able to handle more than 200,000 primes', function () {
+    expect(primeList(200000)).to.have.lengthOf(200000);
+    expect(() => primeList(200000)).to.not.throw();
   });
-
 
 });
 
