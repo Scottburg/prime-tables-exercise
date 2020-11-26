@@ -45,24 +45,31 @@ return resArr;
 
 function createTable(arr){
 
-const resArr = Array.from(Array(arr.length + 1), x => new Array(arr.length + 1));
-// console.log(resArr);
 
-resArr[0] = [" ", ...arr];
+  if (!Array.isArray(arr)) {throw new Error("Only Arrays of Numbers")};
 
-for(let i = 1; i < resArr.length; i++){
-resArr[i][0] = resArr[0][i];
+  const resArr = Array.from(Array(arr.length + 1), x => new Array(arr.length + 1));
+  // console.log(resArr);
 
-  for(let j = 1; j < resArr[i].length; j++){
+  resArr[0] = [" ", ...arr];
 
-    resArr[i][j] = (resArr[0][j] * resArr[i][0]);
-  } 
+  for(let i = 1; i < resArr.length; i++){
+  resArr[i][0] = resArr[0][i];
+
+    for(let j = 1; j < resArr[i].length; j++){
+
+      resArr[i][j] = (resArr[0][j] * resArr[i][0]);
+    } 
+  };
+  resArr.forEach((arr) => console.log(arr.join('|')));
 };
-resArr.forEach((arr) => console.log(arr.join('|')));
+
+
+function createPrimeTable(n){
+if (x < 1 || !Number.isInteger(x)) {throw new Error("Only Positive Integers")};
+const primeArr = createPrimeList(n)
+return(createTable(primeArr));
 };
-
-
-function createPrimeTable(n){};
 
 
 exports.prime = checkifPrime;
