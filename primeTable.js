@@ -44,18 +44,19 @@ function createTable(arr){
 
 
   if (!Array.isArray(arr)) {throw new Error("Only Arrays of Numbers")};
-
+  const maxDigits = ("" + (arr[arr.length-1] ** 2)).length;
   const resArr = Array.from(Array(arr.length + 1), x => new Array(arr.length + 1));
+  const firstRow = arr.map(el => (""+el).padStart(maxDigits, " "));
   // console.log(resArr);
 
-  resArr[0] = [" ", ...arr];
+  resArr[0] = [" ".padStart(maxDigits, " "), ...firstRow];
 
   for(let i = 1; i < resArr.length; i++){
-  resArr[i][0] = resArr[0][i];
+  resArr[i][0] = ("" + resArr[0][i]).padStart(maxDigits, " ");
 
     for(let j = 1; j < resArr[i].length; j++){
 
-      resArr[i][j] = (resArr[0][j] * resArr[i][0]);
+      resArr[i][j] = ("" + (resArr[0][j] * resArr[i][0])).padStart(maxDigits, " ")
     } 
   };
   resArr.forEach((arr) => console.log(arr.join('|')));
