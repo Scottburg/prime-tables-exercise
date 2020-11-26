@@ -15,8 +15,8 @@ describe.only('check if number is a Prime', function () {
   it('should return true if given a prime number', function () {
     expect(prime(2)).be.true;
     expect(prime(5)).be.true;
-    // expect(prime(1)).be.false;
-    // expect(prime(10)).be.false;
+    expect(prime(1)).be.false;
+    expect(prime(10)).be.false;
     expect(prime(5025)).be.false;
     expect(prime(89)).be.true;
   });
