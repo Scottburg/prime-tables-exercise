@@ -23,7 +23,7 @@ describe('checkIfPrime', function () {
 
   it('should only acccept positive integers', function () {
     expect(()=> prime(-33)).to.throw(Error)
-    expect(()=> prime("bannana")).to.throw(Error)
+    expect(()=> prime("banana")).to.throw(Error)
     expect(()=> prime(12.27)).to.throw(Error)
   });
 
@@ -39,7 +39,7 @@ describe('create multiplication table', function () {
 
 });
 
-describe.only('CreatePrimeList', function () {
+describe('CreatePrimeList', function () {
 
   it('output should be an array of length n', function () {
     expect(primeList(10)).to.have.lengthOf(10);
@@ -55,6 +55,12 @@ describe.only('CreatePrimeList', function () {
   it('should be highly performant and able to handle more than 200,000 primes', function () {
     expect(primeList(200000)).to.have.lengthOf(200000);
     expect(() => primeList(200000)).to.not.throw();
+  });
+
+  it('should only acccept positive integers', function () {
+    expect(()=> primeList(-33)).to.throw(Error)
+    expect(()=> primeList("banana")).to.throw(Error)
+    expect(()=> primeList(12.27)).to.throw(Error)
   });
 
 });

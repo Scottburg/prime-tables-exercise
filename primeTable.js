@@ -27,17 +27,19 @@ for (let i = 3; i <= Math.sqrt(num); i += 2) {
 
 
 function createPrimeList(x){
-  const resArr = [2];
-  let primePos = 1;
-  let num = 1;
 
-  while (primePos < x) {
-    num = num + 2;
+if (x < 1 || !Number.isInteger(x)) {throw new Error("Only Positive Integers")}
+const resArr = [2];
+let primePos = 1;
+let num = 1;
 
-    if (checkifPrime(num)){
-      resArr.push(num);
-      primePos++;
-    }};
+while (primePos < x) {
+  num = num + 2;
+
+  if (checkifPrime(num)){
+    resArr.push(num);
+    primePos++;
+  }};
 
 return resArr;
 
