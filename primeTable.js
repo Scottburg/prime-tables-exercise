@@ -1,9 +1,6 @@
 'use strict'
 
-/* TO DO - s
-Create a function that takes an array of numbers and from this output a multiplication list to the console
-Create a function that puts all the functions together
-
+/* TO DO -
 
 Consistent formatting on the table. 
 
@@ -25,7 +22,7 @@ for (let i = 3; i <= Math.sqrt(num); i += 2) {
 
 function createPrimeList(x){
 
-if (x < 1 || !Number.isInteger(x)) {throw new Error("Only Positive Integers")}
+// if (x < 1 || !Number.isInteger(x)) {throw new Error("Only Positive Integers")}
 const resArr = [2];
 let primePos = 1;
 let num = 1;
@@ -65,9 +62,9 @@ function createTable(arr){
 };
 
 
-function createPrimeTable(n){
+function createPrimeTable(x){
 if (x < 1 || !Number.isInteger(x)) {throw new Error("Only Positive Integers")};
-const primeArr = createPrimeList(n)
+const primeArr = createPrimeList(x)
 return(createTable(primeArr));
 };
 
@@ -78,5 +75,6 @@ exports.table = createTable;
 exports.primeTable = createPrimeTable;
 
 if (process.mainModule.filename === __filename){
-  console.log(createTable([2,3,5,7,11,13]));
+      createPrimeTable(Number(process.argv[2]));
+      createPrimeTable(5)
 };
