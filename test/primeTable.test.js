@@ -41,15 +41,15 @@ describe('create multiplication table', function () {
 
 describe('create list of first n primes', function () {
 
-
-  it('output should be of length n', function () {
+  it('output should be an array of length n', function () {
   });
 
-  it('output should be of length n', function () {
+  it('should be performant and able to handle more than 20,000 primes', function () {
   });
 
-  it('should  be performant and able to handle more than 20,000 primes', function () {
+  it('all numbers in the array should be prime', function () {
   });
+
 
 });
 
