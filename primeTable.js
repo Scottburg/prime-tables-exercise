@@ -12,7 +12,14 @@ Consistent formatting on the table.
 Prime list should work for 20,000+ Primes 
 */
 
-function checkifPrime(num){};
+function checkifPrime(num){
+  if (num === 2) {return true};
+
+for (let i = 3; i <= Math.sqrt(num); i += 2) {
+ if (num % i === 0) return false;
+}
+  return true;
+};
 
 
 
